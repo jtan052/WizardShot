@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882929464741532991}
   - component: {fileID: 298868387460080825}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: -7615497051675912781}
   - component: {fileID: 7707453395672136803}
   - component: {fileID: -3495882035488641440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player")]
+    [SerializeField] float health = 200f;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = .1f;
-    [SerializeField] float projectileSpeed = 10f;
+    
+
+    [Header("Projectile")]
     [SerializeField] GameObject projectile;
+    [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 1f;
 
     Coroutine firing;
@@ -28,6 +33,25 @@ public class Player : MonoBehaviour
         Move();
         Fire();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
+        if (!damageDealer) { return; }
+        DealDamage(damageDealer);
+    }
+
+    private void DealDamage(DamageDealer damageDealer)
+    {
+        health -= damageDealer.GetDamage();
+        damageDealer.Hit();
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     private void SetUpMoveBoundaries()
     {
         Camera gameCamera = Camera.main;
