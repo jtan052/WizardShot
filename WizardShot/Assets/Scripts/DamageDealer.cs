@@ -5,6 +5,8 @@ using UnityEngine;
 public class DamageDealer : MonoBehaviour
 {
     [SerializeField] int damage = 100;
+    [SerializeField] AudioClip hitNoise;
+    [SerializeField] [Range(0,1)] float hitVolume = .5f;
 
     public int GetDamage()
     {
@@ -14,5 +16,6 @@ public class DamageDealer : MonoBehaviour
     public void Hit()
     {
         Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(hitNoise, Camera.main.transform.position, hitVolume);
     }
 }

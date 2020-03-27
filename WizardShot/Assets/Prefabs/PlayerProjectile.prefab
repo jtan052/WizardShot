@@ -165,3 +165,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  hitNoise: {fileID: 8300000, guid: 72a99a3c74746a845b70c391ac08041e, type: 3}
+  hitVolume: 0.371
