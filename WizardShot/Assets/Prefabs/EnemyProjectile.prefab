@@ -164,6 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2347bf7c05885d498acd31a1666c7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 25
   hitNoise: {fileID: 8300000, guid: b117c572e4144d148b3027e5e0910cc6, type: 3}
   hitVolume: 0

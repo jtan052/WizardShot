@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3899379736562489284}
   - component: {fileID: 1444488646315006835}
   - component: {fileID: -8304397810310099367}
+  - component: {fileID: 1964779583226637715}
+  - component: {fileID: -7547431704005614443}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -111,10 +113,10 @@ MonoBehaviour:
   health: 100
   shotCounter: 0
   minTimeBetweenShots: 0.5
-  maxTimeBetweenShots: 3
+  maxTimeBetweenShots: 1
   projectile: {fileID: 8368404988410097367, guid: f51e69faa91fbaf44af9fb6b743f3733,
     type: 3}
-  projectileSpeed: 1.5
+  projectileSpeed: 3
   explosionVFX: {fileID: 7580542066897189866, guid: 1a5ac839ba36bd14091f6d2ff8414639,
     type: 3}
   deathSFX: {fileID: 8300000, guid: ea7e0dfc9fbf927468a97789a4a59559, type: 3}
@@ -131,7 +133,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.003954552, y: -0.02901116}
@@ -147,3 +149,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.233, y: 0.3019777}
   m_EdgeRadius: 0
+--- !u!50 &1964779583226637715
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905030414154241536}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-7547431704005614443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905030414154241536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2347bf7c05885d498acd31a1666c7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 300
+  hitNoise: {fileID: 8300000, guid: 84d2d7f2ae43beb4191a97f6a3696a51, type: 3}
+  hitVolume: 0.5

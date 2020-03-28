@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Player")]
-    [SerializeField] float health = 200f;
+    [SerializeField] int health = 200;
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = .1f;
     
@@ -58,10 +58,15 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        FindObjectOfType<Level>().LoadGameOver();
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
     private void SetUpMoveBoundaries()
     {
         Camera gameCamera = Camera.main;
@@ -69,7 +74,7 @@ public class Player : MonoBehaviour
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1 - padding, 0, 0)).x;
 
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0 + padding, 0)).y;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1 - padding, 0)).y;
+        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, .2f, 0)).y;
     }
 
     private void Move()
